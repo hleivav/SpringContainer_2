@@ -1,16 +1,20 @@
 package se.lexikon.models;
 
+import java.util.UUID;
+
 public class Student {
     public int id;
     public String name;
+    private static int counter = 0;
 
-    public Student(int id, String name) {
-        this.id = id;
+    public Student(String name) {
+        this.id = generateUniqueId();
         this.name = name;
     }
 
-    public Student(String name) {
-        this.name = name;
+
+    private int generateUniqueId() {
+       return ++counter;
     }
 
     public int getId() {
@@ -28,4 +32,10 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" + "id=" + id + ", name=" + name + '}';
+    }
+
 }

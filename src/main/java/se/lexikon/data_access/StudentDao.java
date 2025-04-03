@@ -10,5 +10,6 @@ public interface StudentDao {
     Student find(int id);
     List<Student> findAll();
     void delete(int id);
+    Student edit(Student student, String name);
 
 }

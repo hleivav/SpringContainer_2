@@ -1,4 +1,4 @@
-package se.lexikon.service;
+package se.lexikon.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,12 +17,14 @@ public class ScannerInputService implements UserInputService {
 
     @Override
     public String getString() {
-        System.out.println( "Enter a string: ");
+        System.out.println( "Enter the student's name: ");
         return scanner.nextLine();
     }
 
     @Override
     public int getInt() {
-        return 0;
+        System.out.println( "Enter an integer: ");
+
+        return Integer.parseInt(scanner.nextLine());
     }
 }
