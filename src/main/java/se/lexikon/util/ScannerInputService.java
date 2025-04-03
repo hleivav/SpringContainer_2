@@ -18,13 +18,22 @@ public class ScannerInputService implements UserInputService {
     @Override
     public String getString() {
         System.out.println( "Enter the student's name: ");
-        return scanner.nextLine();
+        String userInput = scanner.nextLine().trim();
+        while (userInput.isEmpty()) {
+            System.out.println( "You must enter a name. ");
+            userInput = scanner.nextLine().trim();
+        }
+        return userInput;
     }
 
     @Override
     public int getInt() {
         System.out.println( "Enter an integer: ");
-
-        return Integer.parseInt(scanner.nextLine());
+        String userInput = scanner.nextLine().trim();
+        while (userInput.isEmpty()) {
+            System.out.println( "You must enter an id. ");
+            userInput = scanner.nextLine().trim();
+        }
+        return Integer.parseInt(userInput);
     }
 }
